@@ -1,6 +1,6 @@
 ---
 title: "Week 06 Coding challenge"
-name: [ Katie Bailey ]
+name: [ Katie Bailey]
 output: html_notebook
 ---
 
@@ -26,7 +26,7 @@ library(mgcv)
 #load data set "LHS_TEXAS.csv"
 ```{r include=FALSE}
 # write your code here
-
+data01 <- read_csv("data/LHS_TEXAS.csv") 
 ```
 
 # How many observations? 
