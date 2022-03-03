@@ -12,31 +12,35 @@ You will be using `county` information from Texas for this assignment.
 ```{r load libraries}
 library(tidyverse)
 library(tidymodels)
+install.packages("naniar")
 library(naniar)#replace specific value as NA
+install.packages('lme4')
 library(lme4) #for MLM; install it first if needed
+install.packages('lattice')
 library(lattice) #for dotplot; install it first if needed
 library(afex) #for p-value in LME; install it first if needed.
 library(splines)
 library(gam)
 library(mgcv)
+library(dplyr)
 ```
 
 
 
 #load data set "LHS_TEXAS.csv"
-```{r include=FALSE}
-# write your code here
+```{r include=FALSE} 
+# write your code here #what does r include=FALSE mean?
 data01 <- read_csv("data/LHS_TEXAS.csv") 
 ```
 
 # How many observations? 
 **answer** 
->
+>383
 
 
 # How many variables? 
 **answer**
->
+>35
 
 
 #we will focus on covid-19 related issues; refer to the codebook. 
@@ -46,7 +50,32 @@ data01 <- read_csv("data/LHS_TEXAS.csv")
 
 
 ```{r}
-## your code goes here
+install.packages("readxl")
+library(readxl)
+dataregions<- read_excel("data/texas county regions.xls")
+
+dataregions2<- dataregions %>%
+mutate(county_regions = case_when(`West region` = "x" ~ "West",TRUE ~ " "))
+         
+         
+       ##  `Rio Grande`="x" ~ "Rio Grande", 
+        # `Upper east`="x" ~ "Upper east",
+        # `South east`="x" ~ "South east",
+        # `Northwest region`="x" ~ "Northwest",
+         #`Metroplex region`="x" ~ "Metroplex",
+        #`High Plains`="x" ~ "High Plains",
+         #`Gulf coast`="x" ~ "Gulf coast",
+         #`Central region`="x" ~ "Central",
+         #`Capital region`="x" ~ "Capital",
+        # `Alamo region`="x" ~ "Alamo",
+         #`South Texas region` ="x" ~ "South Texas",
+        # TRUE ~ as.character(0))
+
+# datacombo<- cbind(dataregions, data01)
+
+
+
+
 
 
 ```
