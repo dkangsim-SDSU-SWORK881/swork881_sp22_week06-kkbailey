@@ -1,6 +1,6 @@
 ---
 title: "Week 06 Coding challenge"
-name: [ ]
+name: [ Katie Bailey ]
 output: html_notebook
 ---
 
